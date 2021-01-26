@@ -1,0 +1,6 @@
+framework module Pods_KingfisherSwiftUI {
+  umbrella header "Pods-KingfisherSwiftUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

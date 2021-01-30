@@ -9,7 +9,7 @@ import SwiftUI
 import struct Kingfisher.KFImage
 import struct Kingfisher.AnyModifier
 
-/// Loads an image from the Backen-Api with authentication.
+/// Loads an image from the Api with authentication.
 @ViewBuilder
 func KingFisherImageView(url: String, renderingMode: SwiftUI.Image.TemplateRenderingMode = .original) -> KFImage {
   /*let modifier = AnyModifier { request in

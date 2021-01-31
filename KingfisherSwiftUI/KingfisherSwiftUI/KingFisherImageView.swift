@@ -11,30 +11,29 @@ import struct Kingfisher.AnyModifier
 
 /// Loads an image from the Api with authentication.
 @ViewBuilder
-func KingFisherImageView(url: String, renderingMode: SwiftUI.Image.TemplateRenderingMode = .original) -> KFImage {
-  /*let modifier = AnyModifier { request in
+func KingFisherImageView(url: String) -> KFImage {
+  let modifier = AnyModifier { request in
     var modfiableRequest = request
     modfiableRequest.httpMethod = "GET"
-    //modfiableRequest.setValue("\(Api.encodedAuthenticationHeader())", forHTTPHeaderField: "Authorization")
+    modfiableRequest.setValue("", forHTTPHeaderField: "Authorization")
     return modfiableRequest
-  }*/
+  }
   
   KFImage(
     URL(string: url),
     options: [
       .transition(.fade(0.2)),
-      //.requestModifier(modifier)
+      .requestModifier(modifier)
     ]
   )
-  .renderingMode(renderingMode)
   .onSuccess { result in
-    //print("success: \(result)")
+    print("success: \(result)")
   }
   .onFailure { error in
     print("Failed to load image: \(error)")
   }
   .placeholder {
-    Image("image_loading_error")
+    Image(systemName: "hourglass")
       .font(.largeTitle)
       .opacity(0.25)
   }

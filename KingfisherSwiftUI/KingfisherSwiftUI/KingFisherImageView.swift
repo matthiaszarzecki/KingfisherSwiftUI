@@ -34,7 +34,7 @@ func KingFisherImageView(url: String) -> KFImage {
   }
   .placeholder {
     Image(systemName: "hourglass")
-      .font(.largeTitle)
+      .font(.system(size: 222))
       .opacity(0.25)
   }
 }
